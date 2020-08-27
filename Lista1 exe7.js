@@ -3,6 +3,8 @@ chefe()
 function chefe(){
     var vetor =[]
     exe7(vetor)
+    console.log(vetor)
+    calculaMedia(vetor)
 }
 
 function exe7(vet){
@@ -15,4 +17,13 @@ function exe7(vet){
     while(numero >= 0)
 
 
+}
+
+function calculaMedia(vet){
+    var soma = 0 
+    for(var i=0; i<vet.lenght; i++){
+        soma = soma + vet[i]
+    }
+    
+    (console.log)(`A média é ${soma/vet.lenght}`)
 }
