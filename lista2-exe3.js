@@ -55,22 +55,38 @@ function calcularMedia(vet){
 
 function calcularMaiorIdade(vet){
     console.log(`Entrou na função calcular maior idade`)
-
-}
-
-function calcularQtd(vet){
     let maiorIdade = vet[0].idade
     for(let i =1; i < vet.lenght; i++){
         if (vet[i].idade . maiorIdade){
             maiorIdade = vet[i].idade
         }
     }
+   console.log(`A maior idade é de ${maiorIdade}`)
+}
+
+function calcularQtd(vet){
+    let qtde = 0 
+    for(let i=0; i<vet.lenght;i++){
+        if (((vet[i].sexo  == "F") && (vet[i].idade >= 20) &&(vet[i].idade <= 45))
+            ||
+            ((vet[i].olhos =="A") &&(vet [i].altura < 1.70))){
+                qtde++
+            }
+    }
+    
+    
     console.log(`Entrou na função calcular Quantidade`)
 
 }
 
 function calcularPercentual(vet){
-    console.log(`Entrou na função calcular percentual`)
+    let conta = 0
+    for(let i = 1; i<vet.lenght; i++){
+        if(vet[i].sexo == "M"){
+            conta++
+        }
+        console.log(`O percentual de homens é ${(conta/vet.lenght)*100}`)
 
+        }
 
 }
