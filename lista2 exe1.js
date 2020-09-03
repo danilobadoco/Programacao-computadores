@@ -3,9 +3,10 @@ chefe()
 function chefe(){
     let vendedores = []
     let vendas = []
+    let opcao
 
     do{
-        let opcao = Number(prompt(`Escolha[1]. Cadastrar Vendedor[2]. Cadastrar Venda[3]. Sair`))
+         opcao = Number(prompt(`Escolha[1]. Cadastrar Vendedor[2]. Cadastrar Venda[3]. Sair`))
         switch(opcao){
 
             case 1 :cadastraVendedor(vendedores)
@@ -18,7 +19,7 @@ function chefe(){
     }
 
     while(opcao !=3)
-    cadastraVendedor(vendedores)
+    
 
 }
 
