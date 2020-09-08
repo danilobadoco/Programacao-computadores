@@ -13,17 +13,89 @@ function chefe(){
                 break
             case 2: cadastraVendas(vendas, vendedores)
                 break
-            case 3: console.log(`Tchau`)
+            case 3 : consultaVendasFuncionarioMes(vendas)
+                break
+            case 4 :consultaVendasFuncionario(vendas) 
+                break 
+            case 5 :consultaVendedorMes(vendas)
+                break
+            case 6 : consultaMes(vendas)
+                break        
+            
+            
+            
+            case 7: console.log(`Tchau`)
             default: console.log(`Tente novamente....`)        
         } 
     }
 
-    while(opcao !=3)
+    while(opcao !=7)
     
 
 }
 
 
+function consultaMes(vdas){
+    let meses = [0,0,0,0,0,0,0,0,0,0,0,0]
+    for(let i = 0 ; i<vdas.length; i++){
+        let posicao = vdas[i].mes -1
+        meses[posicao] = meses[posicao] + vdas[i].valor
+    }
+        let maiorValor = meses[0]
+        for(let i=0; i<meses.length; i++){
+            if (meses[i] > maiorValor){
+                maiorValor = meses[i]
+            }
+        }
+        let posicao = meses.indexOf(maiorValor)
+        console.log(`O Mês que mais vendeu ${posicao + 1}`)
+}
+
+function consultaVendedorMes(vdas){
+    let mes = Number(prompt("Informe o Mês"))
+    maiorVenda = 0 
+    vendedorMaisVendeu = 0
+    for(let i = 0; i  < vdas.length; i++){
+        if (vdas[i].mes == mes){
+            if(vdas[i].valor > maiorVenda){
+                maiorVenda = vdas[i].valor
+                vendedorMaisVendeu = vdas[i].vendedor
+            }
+        }
+    }
+    console.log(`Vendedor com mais vendas ${vendedorMaisVendeu} e valor ${maiorVenda}`)
+}
+
+function consultaVendasFuncionarioMes(vdas){
+        let vendedor = Number(prompt(`Informe o código do vendedor`))
+        let mes = Number(prompt(`Informe o Mês da venda`))
+
+        for(let i=0; i < vdas.length; i++){
+            if((vdas[i].vendedor ==  vendedor) && (vdas[i].mes.getMonth()==mes)){
+                console.log(`Valor da venda ${vdas[i].valor}`)
+                return
+
+            }
+            
+        }
+        console.log(`Não existe venda para este funcionário neste mês`)
+}
+
+function consultaVendasFuncionario(vendas){
+    let vendedor = Number(prompt(`Informe o código do vendedor`))
+    let soma = 0
+    
+    for(let i=0; i < vdas.length; i++){
+        if(vdas[i].vendedor ==  vendedor){
+            soma = soma + vdas[i].valor
+           
+          
+
+        }
+        
+    }
+    console.log(`A soma das vendas é ${soma}`)
+}
 
 function cadastraVendedor(vended){
     let objeto = new Object()
