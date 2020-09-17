@@ -22,7 +22,7 @@ function calculaTimeMaisPontosRodada(mat, vet){
                 nomeTimeMaisPontos = vet[i].nome
             }
         }
-        console.log(`O time ${nomeTimeMaisPontos}fez ${maisPontos}na rodada ${j+1}`)
+        console.log(`O time ${nomeTimeMaisPontos} fez ${maisPontos} na rodada ${j+1}`)
     }
 
 }
@@ -47,7 +47,7 @@ function cadastraTimesePontos(mat,vet){
         vet.push(times)
         mat[i] = []
         for(let j=0; j<3; j++){//para cada rodada
-            mat[i][j] = Number(prompt(`Informe os pontos do time${times.nome}na rodada${j+1}`))
+            mat[i][j] = Number(prompt(`Informe os pontos do time ${times.nome}na rodada${j+1}`))
 
         }
         
