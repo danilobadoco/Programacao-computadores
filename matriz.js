@@ -7,7 +7,7 @@ function chefe(){
     let vetor = []
 
 
-    cadastra(matriz.vetor)// cadastra 3 alunos
+    cadastra(matriz,vetor)// cadastra 3 alunos
     
     consultaMediaAlunos(matriz, vetor)//calcula media das notas
     calculaMediaProvas(matriz)
@@ -42,8 +42,8 @@ function cadastra(mat, vet){
 
     for(let i=0; i<3; i++){
         let objeto = new Object()
-        objeto.nome = (`Informe o nome do aluno`)
-        objeto.rg = (`Informe o RG`)
+        objeto.nome = prompt(`Informe o nome do aluno`)
+        objeto.rg = prompt(`Informe o RG`)
         objeto.media = 0
         vet.push(objeto)
         mat[i] = []
@@ -111,5 +111,28 @@ function consultaMediaAlunos(mat, vet){
    // }
     // acabaram os alunos
    // console.log(vet)
+//}
+//function calculaMaiorNotaProva(mat, vet){
+  //  for(let j=0;j<4;j++){ // para cada prova
+    //    let maiorNota = mat[0][j] // assumo que a maior nota é do primeiro aluno
+      //  let nomeMaiorNota = vet[0].nome // assumo que o nome do aluno com maior nota é o 1o. ano
+        //for(let i=0;i<3;i++){
+          //  if (mat[i][j] > maiorNota){
+            //    maiorNota = mat[i][j] // atualiza nota
+              //  nomeMaiorNota = vet[i].nome // atualiza nome
+            //}
+        //}
+        //console.log(`A prova ${j+1} tem a maior nota ${maiorNota} do aluno ${nomeMaiorNota}`)
+    //}
+//}
+
+//function calculaMediaProvas(mat){
+  //  for(let j=0;j<4;j++){
+    //    let media = 0
+      //  for(let i=0;i<3;i++){
+        //    media = media + mat[i][j]
+       //}
+        //console.log(`A média da prova ${j+1} é ${media/3}`)
+    //}
 //}
 
